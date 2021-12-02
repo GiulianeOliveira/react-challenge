@@ -1,3 +1,50 @@
+## Installation
+
+Install Nocturnal with npm or yarn
+
+```bash
+  npm install
+  or
+  yarn add
+```
+
+## Layout
+
+[Figma Link](https://www.figma.com/file/xFIfu4rDvvxZUpwZUIh2EM/Teste?node-id=0%3A1)
+
+## Tech Stack
+
+**Client:**
+
+- [Axios](https://axios-http.com/docs/intro)
+- [Prop-Types](https://www.npmjs.com/package/prop-types)
+- [React Hook Form](https://react-hook-form.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [React Router Dom](https://v5.reactrouter.com/web/guides/quick-start)
+- [React Toastify](https://fkhadra.github.io/react-toastify/introduction)
+- [Styled Components](https://styled-components.com/)
+- [Styled System](https://styled-system.com/)
+- [Yup](https://github.com/jquense/yup)
+
+## Features
+
+- Create an account
+- Login
+- Create Journal
+- Create notes
+- List Journals
+- Click on a Journal
+- List notes
+- List the note content
+
+## Additional Features
+
+- Logout
+- Shows loader when is loading request's
+- Input validations
+- Toasts with user informations
+- Responsive web app: mobile, tablet and desktop
+
 <p>
 <img width="300" alt="Fuerza Studio" src="https://user-images.githubusercontent.com/52936031/117340242-11ecb980-ae77-11eb-86f6-e41d26aa3fbc.png">
 </p>
@@ -29,18 +76,14 @@ The user of this react application should be able to create an account, login an
 7. List notes.
 8. List the note content.
 
-
-## Layout
-[Figma Link](https://www.figma.com/file/xFIfu4rDvvxZUpwZUIh2EM/Teste?node-id=0%3A1)
-
 ## API Usage
 
 API can be launched using npm start. You will need to run npm install once you starting working on the project to install dependencies.
 
-| Endpoint             | Result                      |
-| -------------------- | --------------------------- |
-| /auth/login          | Login                       |
-| /auth/signup         | Sign up                     |
+| Endpoint              | Result                      |
+| --------------------- | --------------------------- |
+| /auth/login           | Login                       |
+| /auth/signup          | Sign up                     |
 | /journals/entries/:id | List all journals from user |
 
 ---
@@ -58,3 +101,7 @@ API can be launched using npm start. You will need to run npm install once you s
 
 - put => '/journals/entry/:id', journal.updateEntry' _{content,title} : Object_
 - put => '/journals/:id', journal.updateJournal' _title : String_
+
+## Authors
+
+- [@GiulianeOliveira](https://github.com/GiulianeOliveira)
