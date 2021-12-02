@@ -1,17 +1,25 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { Column } from '../Grid';
 import { Text } from '../Text';
 
-const Journal = ({ name, hasCategories, ...props }) => {
+const Journal = ({ numberJournal = 0, name, hasCategories, ...props }) => {
   return (
     <StyledJournal
+      colorDefined={
+        hasCategories
+          ? numberJournal % 2 === 0
+            ? 'babyBlue'
+            : 'blue'
+          : 'lightBrown'
+      }
       width={!hasCategories ? ['240px', '240px', '300px'] : '150px'}
       height={!hasCategories ? ['332px', '332px', '400px'] : '214px'}
       {...props}
     >
       <VerticalDivider
+        colorDefined={hasCategories ? 'lightBlue' : 'lightBrown'}
         height={!hasCategories ? ['329px', '329px', '394px'] : '208px'}
       />
       <StyledColumn
@@ -25,6 +33,7 @@ const Journal = ({ name, hasCategories, ...props }) => {
           fontSize={
             !hasCategories ? ['24px', '24px', '30px'] : ['20px', '20px', '24px']
           }
+          color={numberJournal % 2 !== 0 ? 'white' : 'black'}
         >
           {name}
         </Text>
@@ -38,19 +47,23 @@ const StyledColumn = styled(Column)`
 `;
 
 const StyledJournal = styled(Column)`
-  cursor: pointer;
-  border: 1px solid rgba(248, 229, 214, 1);
-  background: rgba(248, 229, 214, 1);
-  border-radius: 2px 20px 20px 2px;
-  box-shadow: inset 0px 2px 4px rgba(255, 255, 255, 0.25),
-    inset -4px -4px 4px rgba(0, 0, 0, 0.1);
+  ${({ colorDefined, theme: { colors } }) => css`
+    cursor: pointer;
+    border: 1px solid ${colors[colorDefined]};
+    background: ${colors[colorDefined]};
+    border-radius: 2px 20px 20px 2px;
+    box-shadow: inset 0px 2px 4px rgba(255, 255, 255, 0.25),
+      inset -4px -4px 4px rgba(0, 0, 0, 0.1);
+  `}
 `;
 
 const VerticalDivider = styled(Column)`
-  position: absolute;
-  border-left: 18px solid #f8e5d6;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 2px 0px 0px 2px;
+  ${({ colorDefined, theme: { colors } }) => css`
+    position: absolute;
+    border-left: 18px solid ${colors[colorDefined]};
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 2px 0px 0px 2px;
+  `}
 `;
 
 export { Journal };
