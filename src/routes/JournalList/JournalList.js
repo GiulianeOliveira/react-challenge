@@ -21,13 +21,12 @@ const JournalList = () => {
 
   useEffect(() => {
     const listJournals = async () => {
-      console.log(user);
       const userId = user[1].user.id;
 
       try {
         setIsLoading(true);
-        const journals = await getJournals(userId);
-        setJournals(journals.journals);
+        const { journals } = await getJournals(userId);
+        setJournals(journals);
         setIsLoading(false);
       } catch (error) {
         console.log(error);
@@ -36,7 +35,7 @@ const JournalList = () => {
     };
 
     listJournals();
-  }, []);
+  }, [user]);
 
   return (
     <BackgroundColumn

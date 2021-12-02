@@ -32,7 +32,7 @@ const CreateNote = () => {
     };
 
     listJournals();
-  }, [idJournal]);
+  }, [idJournal, user]);
 
   return (
     <BackgroundColumn
