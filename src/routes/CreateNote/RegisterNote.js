@@ -50,7 +50,7 @@ const RegisterNote = () => {
     };
 
     listJournals();
-  }, [idJournal]);
+  }, [idJournal, user]);
 
   const onSubmit = async ({ note_title, note_description }) => {
     try {

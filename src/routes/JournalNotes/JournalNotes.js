@@ -38,7 +38,7 @@ const JournalNotes = () => {
     };
 
     listJournals();
-  }, []);
+  }, [idJournal]);
 
   useMemo(() => {
     const listJournals = async () => {
@@ -53,7 +53,7 @@ const JournalNotes = () => {
     };
 
     listJournals();
-  }, [idJournal]);
+  }, [idJournal, user]);
 
   return (
     <BackgroundColumn
