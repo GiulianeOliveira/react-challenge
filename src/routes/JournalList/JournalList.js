@@ -84,6 +84,7 @@ const JournalList = () => {
                 <Journal
                   name={title}
                   key={index}
+                  numberJournal={index}
                   hasCategories
                   mt="20px"
                   onClick={() => history.push(`/journal/${id}/journal-notes`)}

@@ -24,6 +24,9 @@ const theme = {
     brown: '#834825',
     mediumBrown: '#804627',
     red: '#bf1650',
+    blue: '#3B4E8D',
+    lightBlue: '#5091D6',
+    babyBlue: '#B8E5E3',
   },
 };
 
