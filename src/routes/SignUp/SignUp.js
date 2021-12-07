@@ -90,9 +90,9 @@ const SignUp = () => {
     >
       <Image
         src={logoApp}
-        width={['200px', '200px', '300px']}
-        height={['50px', '50px', '100px']}
-        mt="120px"
+        width={['205px', '200px', '300px']}
+        height={['42px', '50px', '100px']}
+        mt="160px"
         alt="logo com o nome do caderno de notas: nocturnal"
       />
       <Row

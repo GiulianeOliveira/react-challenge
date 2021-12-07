@@ -88,13 +88,13 @@ const SignIn = () => {
     >
       <Image
         src={logoApp}
-        width={['200px', '200px', '300px']}
-        height={['50px', '50px', '100px']}
-        mt="120px"
+        width={['205px', '200px', '300px']}
+        height={['42px', '50px', '100px']}
+        mt="160px"
         alt="logo with the note block's name: nocturnal"
       />
       <Row
-        m={['110px 0px 20px', '110px 0px 20px', '85px 0px 45px']}
+        m={['100px 0px 40px', '110px 0px 20px', '85px 0px 45px']}
         alignItems="center"
         justifyContent="space-between"
       >
@@ -106,7 +106,7 @@ const SignIn = () => {
           fontWeight="600"
           onClick={() => history.push('/register')}
         >
-          Sign Up
+          Sign up
         </Button>
       </Row>
       {isLoading ? (

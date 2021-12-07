@@ -36,6 +36,7 @@ const CreateJournal = () => {
     mode: 'onBlur',
     resolver: yupResolver(validateJournal),
   });
+
   const onSubmit = async ({ journal_name }) => {
     const userId = user[1].user.id;
 
@@ -89,15 +90,15 @@ const CreateJournal = () => {
     <BackgroundColumn
       backgroundImage={backgroundImage}
       margin={['0px auto', '100px auto', '100px auto']}
-      p="40px 30px"
+      p={['0px 20px 40px', '0px 20px 40px', '40px 30px']}
       width={['375px', '375px', '500px']}
       height={['600px', '812px', '630px']}
       bg="lightBrown"
     >
       <Image
         src={logoApp}
-        width={['200px', '300px', '300px']}
-        height={['50px', '100px', '100px']}
+        width={['150px', '150px', '200px']}
+        height={['50px', '50px', '100px']}
         alt="logo with the note block's name: nocturnal"
       />
       <Column alignItems="center" mt="100px">
@@ -108,7 +109,7 @@ const CreateJournal = () => {
               alt="image with a person meditating"
               width="323px"
               height="348px"
-              mb="100px"
+              mb="80px"
             />
             <Button
               variant="primary-text"

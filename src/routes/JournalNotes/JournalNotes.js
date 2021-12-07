@@ -28,8 +28,12 @@ const JournalNotes = () => {
       try {
         setIsLoading(true);
         const { entries } = await getNotes(idJournal);
-
         setNotes(entries);
+
+        if (entries.length === 0) {
+          history.push(`/journal/${idJournal}/create-note`);
+        }
+
         setIsLoading(false);
       } catch (error) {
         console.log(error);
@@ -59,15 +63,15 @@ const JournalNotes = () => {
     <BackgroundColumn
       backgroundImage={backgroundImage}
       margin={['0px auto', '100px auto', '100px auto']}
-      p="40px 30px"
+      p={['0px 20px 40px', '0px 20px 40px', '40px 30px']}
       width={['375px', '375px', '500px']}
       height="100%"
       bg="lightBrown"
     >
       <Image
         src={logoApp}
-        width={['200px', '300px', '300px']}
-        height={['50px', '100px', '100px']}
+        width={['150px', '150px', '200px']}
+        height={['50px', '50px', '100px']}
         alt="logo with the note block's name: nocturnal"
       />
       <Row mt="30px" justifyContent="space-between">
@@ -93,7 +97,7 @@ const JournalNotes = () => {
           width="116px"
           height="40px"
           fontWeight="600"
-          onClick={() => history.push(`/journal/${idJournal}/create-note`)}
+          onClick={() => history.push(`/journal/${idJournal}/register-note`)}
         >
           + Add note
         </Button>
@@ -104,13 +108,8 @@ const JournalNotes = () => {
         </Row>
       ) : (
         <Row flexWrap="wrap" justifyContent="space-between" mt="20px">
-          {notes?.map(({ title, content }, index) => (
-            <Note
-              m={['10px', '10px', '22px']}
-              title={title}
-              description={content}
-              key={index}
-            />
+          {notes?.map(({ title }, index) => (
+            <Note m={['10px', '10px', '22px']} title={title} key={index} />
           ))}
         </Row>
       )}

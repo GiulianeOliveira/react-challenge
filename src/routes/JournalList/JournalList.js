@@ -27,6 +27,11 @@ const JournalList = () => {
         setIsLoading(true);
         const { journals } = await getJournals(userId);
         setJournals(journals);
+
+        if (journals.length === 0) {
+          history.push('/create-journal');
+        }
+
         setIsLoading(false);
       } catch (error) {
         console.log(error);
@@ -41,7 +46,7 @@ const JournalList = () => {
     <BackgroundColumn
       backgroundImage={backgroundImage}
       margin={'0px auto'}
-      p={['40px 0px', '40px 0px', '40px 30px']}
+      p={['0px 0px 40px', '0px 0px 40px', '40px 30px']}
       width={['375px', '375px', '500px']}
       bg="lightBrown"
     >
@@ -67,7 +72,7 @@ const JournalList = () => {
           + Add Journal
         </Button>
       </Row>
-      <Column width={['375px', '375px', '400px']}>
+      <Column width={['375px', '375px', '400px']} minHeight="650px">
         {isLoading ? (
           <Row alignItems="center" margin="200px auto">
             <Loader />
@@ -95,17 +100,19 @@ const JournalList = () => {
         )}
       </Column>
 
-      <Button
-        mt="30px"
-        variant="primary-text"
-        fontSize={['16px', '16px', '14px']}
-        onClick={() => {
-          setUser(false);
-          history.push('/logout');
-        }}
-      >
-        Logout
-      </Button>
+      <Row justifyContent="center" width="100%">
+        <Button
+          mt="30px"
+          variant="primary-text"
+          fontSize={['16px', '16px', '14px']}
+          onClick={() => {
+            setUser(false);
+            history.push('/logout');
+          }}
+        >
+          Logout
+        </Button>
+      </Row>
     </BackgroundColumn>
   );
 };

@@ -99,15 +99,15 @@ const RegisterNote = () => {
     <BackgroundColumn
       backgroundImage={backgroundImage}
       margin={['0px auto', '100px auto', '100px auto']}
-      p="40px 30px"
+      p={['0px 20px 40px', '0px 20px 40px', '40px 30px']}
       width={['375px', '375px', '500px']}
       height="100%"
       bg="lightBrown"
     >
       <Image
         src={logoApp}
-        width={['200px', '300px', '300px']}
-        height={['50px', '100px', '100px']}
+        width={['150px', '150px', '200px']}
+        height={['50px', '50px', '100px']}
         alt="logo with the note block's name: nocturnal"
       />
       <Row mt="30px" alignItems="center">

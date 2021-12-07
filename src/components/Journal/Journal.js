@@ -23,11 +23,11 @@ const Journal = ({ numberJournal = 0, name, hasCategories, ...props }) => {
         height={!hasCategories ? ['329px', '329px', '394px'] : '208px'}
       />
       <StyledColumn
-        margin="auto"
-        width={!hasCategories ? '150px' : '60px'}
-        alignItems="center"
+        width={!hasCategories ? '150px' : '100px'}
+        margin={!hasCategories ? 'auto' : 'auto auto auto 28px'}
       >
         <Text
+          margin="auto"
           fontFamily="Abhaya Libre"
           fontWeight="700"
           fontSize={
@@ -44,6 +44,8 @@ const Journal = ({ numberJournal = 0, name, hasCategories, ...props }) => {
 
 const StyledColumn = styled(Column)`
   word-break: break-word;
+  align-items: center;
+  text-align: center;
 `;
 
 const StyledJournal = styled(Column)`

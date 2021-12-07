@@ -21,15 +21,16 @@ export const validateJournal = yup.object().shape({
   journal_name: yup
     .string()
     .required()
-    .max(30, 'Field must be have max 30 characters'),
+    .max(20, 'Field must be have max 20 characters'),
 });
 
 export const validateNote = yup.object().shape({
   note_title: yup
     .string()
     .required()
-    .max(20, 'Field must be have max 20 characters'),
+    .max(80, 'Field must be have max 80 characters'),
   note_description: yup
     .string()
+    .required()
     .max(500, 'Field must be have max 500 characters'),
 });

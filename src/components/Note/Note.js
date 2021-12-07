@@ -4,22 +4,20 @@ import styled, { css } from 'styled-components';
 import { Column, Row } from '../../components/Grid';
 import { Text } from '../../components/Text';
 
-const Note = ({ title, description, ...props }) => (
+const Note = ({ title, ...props }) => (
   <StyledColumn {...props} width={['137px', '137px', '154px']}>
     <Row>
-      <Text fontWeight="bold" color="black" fontSize="20px">
+      <StyledText color="black" fontSize="20px">
         {title}
-      </Text>
+      </StyledText>
     </Row>
-    {description && (
-      <Row mt="4px">
-        <Text color="black" fontSize={['16px', '16px', '20px']}>
-          {description}
-        </Text>
-      </Row>
-    )}
   </StyledColumn>
 );
+
+const StyledText = styled(Text)`
+  line-break: auto;
+  line-height: 25px;
+`;
 
 const StyledColumn = styled(Column)`
   ${({ theme: { colors } }) => css`
